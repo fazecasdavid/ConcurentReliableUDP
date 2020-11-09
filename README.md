@@ -3,11 +3,11 @@
 File transfer (client sends a filename to the server, and the server sends back the content of the file) using ReliableUDP
 
 - Reliable Part:  is done using a primitive ARQ retransmission:
-                  We need to keep a state on each side of a connection. The state structure contains for each pairs of (IP:port) to which your application is talking to:
-                  
-                    -sequenceNo;
-                    -expectedSequenceNo received from the remote party;
-                    -receiveQueue for holding data not read by the user;
+
+                  We need to keep a state on each side of a connection. The state structure contains for each pairs of (IP:port) to which the application is talking to:
+                    -sequenceNo
+                    -expectedSequenceNo received from the remote party
+                    -receiveQueue for holding data not read by the user
                     
                     
                   - we also need to implement our own DatagramPacket:
